@@ -17,6 +17,8 @@ public class Cidades {
 	private long id_cidade;
 	private String cid_nome;
 	private Estados id_estado;
+	@OneToOne(mappedBy = "Cidades")
+	private Costureiras costureiras;
 	
 	public Cidades() {
 		super();

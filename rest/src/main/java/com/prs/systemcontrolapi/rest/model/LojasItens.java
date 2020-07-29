@@ -26,6 +26,7 @@ public class LojasItens {
 	private Lojas id_loja;
 	private Usuario_model id_usuario;
 	private List<ProdutosGeral> listProdutos;
+	
 	@ManyToMany
 	private List<VendasLojas> listVendas;
 	
