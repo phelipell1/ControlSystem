@@ -125,7 +125,7 @@ public class ProdutosGeral {
 		this.dataCadastro = dataCadastro;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
     @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
 	public Usuario_model getId_usuario() {
 		return id_usuario;

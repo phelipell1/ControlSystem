@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 @Entity
 @Table(name = "tbl_Login")
@@ -19,7 +20,7 @@ public class Logins_model {
 	private String password;
 	private Date dataCadastro;
 	private Date dataAlteracao;
-	@OneToOne(mappedBy = "tbl_usuario")
+	@OneToOne(mappedBy = "Usuario_model")
 	private Usuario_model usario;
 	
 	public Logins_model() {

@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 import com.prs.systemcontrolapi.rest.Enums.Cargo;
 import com.prs.systemcontrolapi.rest.Enums.Perfil;
@@ -29,7 +30,7 @@ public class Usuario_model {
 	private Logins_model id_login;
 	@OneToOne(mappedBy = "tbl_Atividades")
 	private Usuario_model usario;
-	@OneToOne(mappedBy = "tbl_ProdutosGeral")
+	@OneToOne(mappedBy = "ProdutosGeral")
 	private ProdutosGeral produtos;
 	@OneToOne(mappedBy = "tbl_LojasItens")
 	private LojasItens lojaIntns;
@@ -116,7 +117,7 @@ public class Usuario_model {
 		this.perfil = perfil;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
     @JoinColumn(name = "id_login", referencedColumnName = "id_login")
 	public Logins_model getId_login() {
 		return id_login;
