@@ -2,6 +2,7 @@ package com.prs.systemcontrolapi.rest.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -84,7 +85,7 @@ public class Atividades {
 	}
 	
 	@OneToOne
-	@JoinColumn(name = "id_usuario", nullable = false)
+	@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
 	public Usuario_model getId_usuario() {
 		return id_usuario;
 	}

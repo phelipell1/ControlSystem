@@ -2,7 +2,6 @@ package com.prs.systemcontrolapi.rest.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.transaction.Transactional;
 
 import com.prs.systemcontrolapi.rest.Enums.Cargo;
 import com.prs.systemcontrolapi.rest.Enums.Perfil;
@@ -28,7 +26,7 @@ public class Usuario_model {
 	private Cargo cargo;
 	private Perfil perfil;
 	private Logins_model id_login;
-	@OneToOne(mappedBy = "tbl_Atividades")
+	@OneToOne(mappedBy = "Atividades")
 	private Usuario_model usario;
 	@OneToOne(mappedBy = "ProdutosGeral")
 	private ProdutosGeral produtos;
