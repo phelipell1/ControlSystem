@@ -26,7 +26,7 @@ public class ProdutosGeralController {
 	@Autowired
 	private ProdutosGeralRespository pgRepository;
 	
-	@GetMapping("/listaprodutos")
+	@GetMapping("/produtosgerais")
 	public List<ProdutosGeral> getAllProdutosGeral(){
 		return pgRepository.findAll();
 	}
@@ -36,7 +36,7 @@ public class ProdutosGeralController {
 		return pgRepository.save(produtosGerais);
 	}
 	
-	@GetMapping("/listaprodutos/{id}")
+	@GetMapping("/produtosgerais/{id}")
 	public ResponseEntity<ProdutosGeral> getUsuarioById(@PathVariable(value = "id") Long pgId)
 			throws ResourceNotFoundException{
 		ProdutosGeral produtos = pgRepository.findById(pgId)

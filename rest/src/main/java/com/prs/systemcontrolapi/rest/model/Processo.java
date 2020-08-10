@@ -46,7 +46,7 @@ public class Processo {
 	}
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_processo() {
 		return id_processo;
 	}

@@ -24,17 +24,17 @@ public class AtividadesController {
 	@Autowired
 	private AtividadesRepository atividadeRepository;
 	
-	@GetMapping("/listaAtividades")
+	@GetMapping("/atividades")
 	public List<Atividades> getAllAtividades(){
 		return atividadeRepository.findAll();
 	}
 	
-	@PostMapping("/atividade")
+	@PostMapping("/atividades")
 	public Atividades addAtividades(@Validated @RequestBody Atividades atividades) {
 		return atividadeRepository.save(atividades);
 	}
 	
-	@GetMapping("/listaAtividade/{id}")
+	@GetMapping("/atividades/{id}")
 	public ResponseEntity<Atividades> getAtividadesBy(@PathVariable(value = "id") Long atividadeId)
 			throws ResourceNotFoundException{
 		Atividades atividades = atividadeRepository.findById(atividadeId)
@@ -42,7 +42,7 @@ public class AtividadesController {
 		return ResponseEntity.ok().body(atividades);
 	}
 	
-	@PutMapping("atividade/{id}")
+	@PutMapping("atividades/{id}")
 	public ResponseEntity<Atividades> updateAtividades(@PathVariable(value = "id") Long atividadeId,
 			@Validated @RequestBody Atividades atividadeDetalhes)
 			throws ResourceNotFoundException{
@@ -58,7 +58,7 @@ public class AtividadesController {
 		return ResponseEntity.ok(atv);
 	}
 	
-	@DeleteMapping("/atividade/{id}")
+	@DeleteMapping("/atividades/{id}")
 	public Map<String, Boolean> deletaAtividade(@PathVariable(value = "id") long atividadeId)
 			throws ResourceNotFoundException{
 		Atividades atividade = atividadeRepository.findById(atividadeId)

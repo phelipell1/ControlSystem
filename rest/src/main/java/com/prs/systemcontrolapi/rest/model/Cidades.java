@@ -32,7 +32,7 @@ public class Cidades {
 	}
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_cidade() {
 		return id_cidade;
 	}

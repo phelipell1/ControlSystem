@@ -50,7 +50,7 @@ public class Costureiras {
 	}
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_costureira() {
 		return id_costureira;
 	}

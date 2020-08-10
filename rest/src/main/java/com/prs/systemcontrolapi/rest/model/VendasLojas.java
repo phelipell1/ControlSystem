@@ -53,7 +53,7 @@ public class VendasLojas {
 	}
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_vendaLoja() {
 		return id_vendaLoja;
 	}

@@ -52,7 +52,7 @@ public class ProdutosGeral {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_estoque() {
 		return id_estoque;
 	}

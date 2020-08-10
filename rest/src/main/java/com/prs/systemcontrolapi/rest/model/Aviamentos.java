@@ -43,7 +43,7 @@ public class Aviamentos {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_aviamento() {
 		return id_aviamento;
 	}

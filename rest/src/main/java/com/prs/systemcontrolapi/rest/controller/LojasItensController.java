@@ -27,7 +27,7 @@ public class LojasItensController {
 	@Autowired
 	LojasItensRepository lojaitensRepository;
 	
-	@GetMapping("/listaLojaItens")
+	@GetMapping("/lojaitens")
 	public List<LojasItens> getAllLojaItens(){
 		return lojaitensRepository.findAll();
 	}
@@ -37,7 +37,7 @@ public class LojasItensController {
 		return lojaitensRepository.save(lojaItens);
 	}
 	
-	@GetMapping("/listaLojaItens/{id}")
+	@GetMapping("/lojaitens/{id}")
 	public ResponseEntity<LojasItens> getAllLojaItensById(@PathVariable(value = "id") Long lojaItemId)
 			throws ResourceNotFoundException{
 		LojasItens lojaItens = lojaitensRepository.findById(lojaItemId)

@@ -28,7 +28,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@GetMapping("/listaUsuarios")
+	@GetMapping("/usuarios")
 	public List<Usuario_model> getAllUsuaios(){
 		return usuarioRepository.findAll();
 	}

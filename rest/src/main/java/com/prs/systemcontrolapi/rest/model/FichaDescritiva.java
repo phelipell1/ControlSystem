@@ -47,7 +47,7 @@ public class FichaDescritiva {
 	}
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_fichaDesc() {
 		return id_fichaDesc;
 	}

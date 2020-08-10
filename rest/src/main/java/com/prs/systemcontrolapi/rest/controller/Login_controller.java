@@ -25,7 +25,7 @@ public class Login_controller {
 	@Autowired
 	private LoginRepository loginRepository;
 	
-	@GetMapping("/listaLogins")
+	@GetMapping("/logins")
 	public List<Logins_model> getLogins_models(){
 		return loginRepository.findAll();
 	}

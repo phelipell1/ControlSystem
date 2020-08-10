@@ -39,7 +39,7 @@ public class Atividades {
 	}
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_Atividade() {
 		return id_Atividade;
 	}

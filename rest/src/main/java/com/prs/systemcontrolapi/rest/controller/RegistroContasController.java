@@ -27,17 +27,17 @@ public class RegistroContasController {
 	@Autowired
 	private RegistroContasRepository regRepository;
 	
-	@GetMapping("/listaRegistros")
+	@GetMapping("/registrocontas")
 	public List<RegistroContas> getAllRegistroContas(){
 		return regRepository.findAll();
 	}
 	
-	@PostMapping("/registroContas")
+	@PostMapping("/registrocontas")
 	public RegistroContas regContas(@Validated @RequestBody RegistroContas regContas) {
 		return regRepository.save(regContas);
 	}
 	
-	@GetMapping("/listaRegistros/{id}")
+	@GetMapping("/registrocontas/{id}")
 	public ResponseEntity<RegistroContas> getRegistroContasById(@PathVariable(value = "id") Long regContasId)
 	throws ResourceNotFoundException{
 		RegistroContas regContas = regRepository.findById(regContasId)
@@ -45,7 +45,7 @@ public class RegistroContasController {
 		return ResponseEntity.ok().body(regContas);
 	}
 	
-	@PutMapping("/registroContas/{id}")
+	@PutMapping("/registrocontas/{id}")
 	public ResponseEntity<RegistroContas> updateRegContas(@PathVariable(value = "id") Long regContasId,
 			@Validated @RequestBody RegistroContas regContasDetalhes) throws ResourceNotFoundException{
 		RegistroContas registro = regRepository.findById(regContasId)
@@ -62,7 +62,7 @@ public class RegistroContasController {
 		return ResponseEntity.ok(registroM);
 	}
 	
-	@DeleteMapping("/registroContas/{id}")
+	@DeleteMapping("/registrocontas/{id}")
 	public Map<String, Boolean> deleteRegistro (@PathVariable(value = "id") Long regContasId)
 			throws ResourceNotFoundException{
 		RegistroContas reg = regRepository.findById(regContasId)

@@ -44,7 +44,7 @@ public class RegistroContas {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId_regContas() {
 		return id_regContas;
 	}
