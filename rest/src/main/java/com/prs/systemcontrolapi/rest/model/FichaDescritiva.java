@@ -23,7 +23,8 @@ public class FichaDescritiva {
 	private String UM;
 	private double custoUnitario;
 	private double custoProducao;
-	@OneToMany(mappedBy = "fichaDescritiva")
+	
+	@OneToMany(mappedBy = "FichaDescritiva")
 	private List<Aviamentos> aviamentos;
 	@ManyToMany(mappedBy = "ListFichaDescritiva")
 	private List<Processo> listProcesso;

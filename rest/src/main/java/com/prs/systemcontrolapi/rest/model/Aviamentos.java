@@ -1,5 +1,6 @@
 package com.prs.systemcontrolapi.rest.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,15 +22,14 @@ public class Aviamentos {
 	private String UM;
 	private double custoUnitario;
 	private double custoProducao;
-	private FichaDescritiva fichaDescritiva;
-	
+	private FichaDescritiva id_fichaDescricao;
 	
 	public Aviamentos() {
 		super();
 	}
-	
+
 	public Aviamentos(long id_aviamento, String referencia, String descricao, String nomeResponsavel, int qtde,
-			String uM, double custoUnitario, double custoProducao, FichaDescritiva fichaDescritiva) {
+			String uM, double custoUnitario, double custoProducao, FichaDescritiva id_fichaDescricao) {
 		super();
 		this.id_aviamento = id_aviamento;
 		this.referencia = referencia;
@@ -39,7 +39,7 @@ public class Aviamentos {
 		UM = uM;
 		this.custoUnitario = custoUnitario;
 		this.custoProducao = custoProducao;
-		this.fichaDescritiva = fichaDescritiva;
+		this.id_fichaDescricao = id_fichaDescricao;
 	}
 
 	@Id
@@ -112,13 +112,16 @@ public class Aviamentos {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_fichaDesc", nullable = false)
-	public FichaDescritiva getFichaDescritiva() {
-		return fichaDescritiva;
+	public FichaDescritiva getId_fichaDescricao() {
+		return id_fichaDescricao;
 	}
-	public void setFichaDescritiva(FichaDescritiva fichaDescritiva) {
-		this.fichaDescritiva = fichaDescritiva;
+
+	public void setId_fichaDescricao(FichaDescritiva id_fichaDescricao) {
+		this.id_fichaDescricao = id_fichaDescricao;
 	}
-	
+
+
+
 	@Override
 	public String toString() {
 		return "Aviamentos [id_aviamento=" + id_aviamento + ", referencia=" + referencia + ", descricao=" + descricao
