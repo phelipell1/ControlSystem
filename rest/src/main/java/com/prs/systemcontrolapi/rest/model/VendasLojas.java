@@ -62,7 +62,7 @@ public class VendasLojas {
 		this.id_vendaLoja = id_vendaLoja;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
 	public Usuario_model getId_usuario() {
 		return id_usuario;
@@ -72,7 +72,7 @@ public class VendasLojas {
 		this.id_usuario = id_usuario;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "id_loja", referencedColumnName = "id_loja")
 	public Lojas getId_loja() {
 		return id_loja;

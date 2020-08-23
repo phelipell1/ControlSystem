@@ -122,7 +122,7 @@ public class Costureiras {
 		this.dataCadastro = dataCadastro;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "id_cidade", referencedColumnName = "id_cidade")
 	public Cidades getId_cidade() {
 		return id_cidade;

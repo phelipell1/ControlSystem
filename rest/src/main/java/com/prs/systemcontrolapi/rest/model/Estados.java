@@ -15,6 +15,7 @@ public class Estados {
 	private long id_estado;
 	private String nome_estado;
 	private String sigla_uf;
+	
 	@OneToOne(mappedBy = "Cidades")
 	private Cidades cidades;
 	

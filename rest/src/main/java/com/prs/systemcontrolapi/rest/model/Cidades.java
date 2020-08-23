@@ -17,6 +17,7 @@ public class Cidades {
 	private long id_cidade;
 	private String cid_nome;
 	private Estados id_estado;
+	
 	@OneToOne(mappedBy = "Cidades")
 	private Costureiras costureiras;
 	
@@ -50,7 +51,7 @@ public class Cidades {
 		this.cid_nome = cid_nome;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "id_estado", referencedColumnName = "id_estado")
 	public Estados getId_estado() {
 		return id_estado;
