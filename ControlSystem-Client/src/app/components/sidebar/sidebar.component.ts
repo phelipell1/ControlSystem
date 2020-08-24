@@ -16,21 +16,29 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
+    path: "/cadastros",
+    title: "Cadastros",
+    rtlTitle: "لوحة القيادة",
+    icon: "icon-notes",
+    class: ""
+  },
+  /*{
     path: "/icons",
     title: "Icons",
     rtlTitle: "الرموز",
     icon: "icon-atom",
     class: ""
-  },
+  },*/
   {
     path: "/maps",
     title: "Maps",
     rtlTitle: "خرائط",
     icon: "icon-pin",
-    class: "" },
+    class: "" 
+  },
   {
     path: "/notifications",
-    title: "Notifications",
+    title: "Notificações",
     rtlTitle: "إخطارات",
     icon: "icon-bell-55",
     class: ""
@@ -38,12 +46,12 @@ export const ROUTES: RouteInfo[] = [
 
   {
     path: "/user",
-    title: "User Profile",
+    title: "Perfil Usuário",
     rtlTitle: "ملف تعريفي للمستخدم",
     icon: "icon-single-02",
     class: ""
   },
-  {
+  /*{
     path: "/tables",
     title: "Table List",
     rtlTitle: "قائمة الجدول",
@@ -57,13 +65,14 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-align-center",
     class: ""
   },
-  {
+  
+ {
     path: "/rtl",
     title: "RTL Support",
     rtlTitle: "ار تي ال",
     icon: "icon-world",
     class: ""
-  }
+  }*/
 ];
 
 @Component({
