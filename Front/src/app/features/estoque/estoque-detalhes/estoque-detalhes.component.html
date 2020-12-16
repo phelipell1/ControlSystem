@@ -1,0 +1,78 @@
+<p-panel header="Detalhes Produto">
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-formgrid p-col-12 p-sm-3 form-img">
+      <img src="/" alt="{{ estoque.idEstoque }}" />
+    </div>
+  </div>
+  <hr />
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-formgrid p-col-12 p-sm-1">
+      <span><b>Código.: </b></span>
+      <input type="text" [ngModel]="estoque.idEstoque" pInputText disabled />
+    </div>
+    <div class="p-field p-formgrid p-col-12 p-sm-12"></div>
+    <div class="p-field p-formgrid p-col-12 p-sm-4">
+      <span><b>Descrição.:</b></span>
+      <input
+        type="text"
+        [ngModel]="estoque.produto.descricao"
+        pInputText
+        disabled
+      />
+    </div>
+    <div class="p-field p-formgrid p-col-12 p-sm-2">
+      <span><b>Modelo.:</b></span>
+      <input
+        type="text"
+        [ngModel]="estoque.produto.modelo.descricao"
+        pInputText
+        disabled
+      />
+    </div>
+    <div class="p-field p-formgrid p-col-12 p-sm-1">
+      <span><b>Tamanho.:</b></span>
+      <input
+        type="text"
+        [ngModel]="estoque.produto.tamanho.nome"
+        pInputText
+        disabled
+      />
+    </div>
+    <div class="p-field p-formgrid p-col-12 p-sm-1">
+      <span><b>Medida.:</b></span>
+      <input
+        type="text"
+        [ngModel]="estoque.produto.medida"
+        pInputText
+        disabled
+      />
+    </div>
+    <div class="p-field p-formgrid p-col-12 p-sm-1">
+      <span><b>Valor.:</b></span>
+      <input
+        type="text"
+        [ngModel]="estoque.produto.precoVenda | currency: 'BRL'"
+        pInputText
+        disabled
+      />
+    </div>
+    <div class="p-field p-formgrid p-col-12 p-sm-2">
+      <span><b>Lancamento.:</b></span>
+      <input
+        type="text"
+        [ngModel]="estoque.dataLancamento | date: 'dd/MM/yyyy'"
+        pInputText
+        disabled
+      />
+    </div>
+    <div class="p-field p-formgrid p-col-12 p-sm-4">
+      <span><b>Loja.:</b></span>
+      <input
+        type="text"
+        [ngModel]="estoque.usuario.loja.nomeLoja"
+        pInputText
+        disabled
+      />
+    </div>
+  </div>
+</p-panel>

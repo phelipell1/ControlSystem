@@ -1,0 +1,42 @@
+<div class="card">
+
+  <p-table #dt [value]="produtos" [rows]="10" [paginator]="true" [globalFilterFields]="['descricao','modelo.descricao']"
+      [rowHover]="true" dataKey="id"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+      <ng-template pTemplate="caption">
+          <div class="p-d-flex p-ai-center p-jc-between">
+              <h5 class="p-m-0">Manage Products</h5>
+              <span class="p-input-icon-left">
+                  <i class="pi pi-search"></i>
+                  <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+              </span>
+          </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+          <tr>
+
+              <th pSortableColumn="descricao">Descrição <p-sortIcon field="descricao"></p-sortIcon></th>
+              <th pSortableColumn="precoVenda">Preço <p-sortIcon field="precoVenda"></p-sortIcon></th>
+              <th pSortableColumn="modelo.descricao">Modelo <p-sortIcon field="modelo.descricao"></p-sortIcon></th>
+              <th pSortableColumn="rating">Imagem <p-sortIcon field="rating"></p-sortIcon></th>
+
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+          <tr>
+
+              <td>{{product.descricao}}</td>
+              <td>{{product.precoVenda | currency:'BRL'}}</td>
+              <td>{{product.modelo.descricao}}</td>
+              <td></td>
+
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+          <div class="p-d-flex p-ai-center p-jc-between">
+              In total there are {{produtos ? produtos.length : 0 }} products.
+          </div>
+      </ng-template>
+  </p-table>
+</div>
+

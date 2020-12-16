@@ -1,0 +1,86 @@
+<p-table #dt [value]="estoque" [rows]="8" [paginator]="true" [globalFilterFields]="['idEstoque','produto.descricao']"
+[rowHover]="true" dataKey="id"
+currentPageReportTemplate="Total produto: {totalRecords}" [showCurrentPageReport]="true">
+<ng-template pTemplate="caption">
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-formgrid p-col-12 p-sm-4">
+      <span class="p-input-icon-left">
+          <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Busque pelo Código ou Descrição do produto"/>
+      </span>
+    </div>
+
+    <div class="p-field p-formgrid p-col-12 p-sm-6"></div>
+
+    <div class="p-field p-formgrid p-col-12 p-sm-2">
+      <span class="p-input-icon-left">
+        <span class="p-buttonset">
+          <button
+            pButton
+            icon="fas fa-plus-circle"
+            label="Novo"
+            class="ui-button-raised ui-button-success"
+            (click)="cadastro()"
+          ></button>
+        </span>
+      </span>
+    </div>
+  </div>
+</ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="idEstoque">Código <p-sortIcon field="idEstoque"></p-sortIcon></th>
+        <th pSortableColumn="produto.descricao">Descrição <p-sortIcon field="produto.descricao"></p-sortIcon></th>
+        <th pSortableColumn="produto.precoVenda">R$ <p-sortIcon field="produto.valorVenda"></p-sortIcon></th>
+        <th pSortableColumn="produto.modelo.descricao">Modelo <p-sortIcon field="modelo.descricao"></p-sortIcon></th>
+        <th pSortableColumn="produto.tamanho.nome">Tamanho <p-sortIcon field="tamanho.nome"></p-sortIcon></th>
+        <th pSortableColumn="quantidade">Quantidade <p-sortIcon field="quantidade"></p-sortIcon></th>
+        <th pSortableColumn="usuario.loja.nomeLoja">Loja <p-sortIcon field="usuario.loja.nomeLoja"></p-sortIcon></th>
+        <th pSortableColumn="idEstoque"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-itens>
+      <tr>
+        <td>{{ itens.idEstoque }}</td>
+        <td>{{ itens.produto.descricao }}</td>
+        <td>{{ itens.produto.precoVenda | currency: "BRL" }}</td>
+        <td>{{ itens.produto.modelo.descricao }}</td>
+        <td>{{ itens.produto.tamanho.nome }}</td>
+        <td>{{ itens.quantidade }}</td>
+        <td>{{ itens.usuario.loja.nomeLoja }}</td>
+        <td>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-3">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="fas fa-info"
+                class="ui-button-raised ui-button-secondary"
+                (click)="showDetalhes(itens.idEstoque)"
+              ></button>
+            </div>
+            <div class="p-field p-col-3">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="far fa-edit"
+                class="ui-button-raised ui-button-secondary"
+                (click)="onUpdate(itens.idEstoque)"
+              ></button>
+            </div>
+            <div class="p-field p-col-3">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="far fa-trash-alt"
+                class="ui-button-raised ui-button-danger"
+                (click)="onDelete(itens.idEstoque)"
+              ></button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
