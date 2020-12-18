@@ -47,6 +47,23 @@
 		    <artifactId>postgresql</artifactId>
 		    <version>42.2.14</version>
 		</dependency>
+		
+		<dependency>
+			<!-- Make method based security testing easier -->
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- dependência do lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.12</version>
+			<scope>provided</scope>
+		</dependency>
+		
+				<!-- swagger - Auxilia e publica uma api de testes para o cliente -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

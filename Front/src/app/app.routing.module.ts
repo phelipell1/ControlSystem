@@ -1,5 +1,4 @@
-import { RegistroClienteModule } from './features/registro-cliente/registro-cliente.module';
-import { EstoqueModule } from './features/estoque/estoque.module';
+import { RegistroUsuarioModule} from './features/registro-usuario/registro-usuario.module'
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -25,10 +24,11 @@ const appRoutes: Routes = [
             canActivate: [AuthGuard]
         },
         {
-          path: 'venda',
-          loadChildren: () => import('src/app/features/vendas/vendas.module').then(m => m.VendasModule),
+          path: 'usuario',
+          loadChildren: () => import('src/app/features/registro-usuario/registro-usuario.module').then(m => m.RegistroUsuarioModule),
           canActivate: [AuthGuard]
-        },
+      },
+
         {
             path: 'departments',
             loadChildren: () => import('src/app/features/department/department.module').then(m => m.DepartmentModule),
@@ -48,22 +48,7 @@ const appRoutes: Routes = [
             path: 'contactus',
             loadChildren: () => import('src/app/features/contactus/contactus.module').then(m => m.ContactUsModule),
             canActivate: [AuthGuard]
-        },
-        {
-            path: 'produto',
-            loadChildren: () => import('src/app/features/produto/produto.module').then(m => m.ProdutoModule),
-            canActivate: [AuthGuard]
-        },
-        {
-            path: 'estoque',
-            loadChildren: () => import('src/app/features/estoque/estoque.module').then(m => m.EstoqueModule),
-            canActivate: [AuthGuard]
-        },
-        {
-          path: 'usuario',
-          loadChildren: () => import('src/app/features/registro-cliente/registro-cliente.module').then(m => m.RegistroClienteModule),
-          canActivate: [AuthGuard]
-      }
+        }
     ]
     },
     {

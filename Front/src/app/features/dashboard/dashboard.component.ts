@@ -3,7 +3,6 @@ import { Component, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { SelectItem } from "primeng";
 import { Produto } from "src/app/core/models/produto";
-import { ProdutoService } from "src/app/core/services/produto.service";
 
 @Component({
   selector: "app-dashboard",
@@ -26,15 +25,9 @@ export class DashboardComponent implements OnInit {
   submitted: boolean;
 
   constructor(
-    private produtoService: ProdutoService,
   ) {}
 
   ngOnInit() {
-    this.produtoService.buscarProduto().subscribe((produtos) => {
-      this.produtos = produtos;
-
-      console.log(this.produtos);
-    });
   }
 
   hideDialog() {
