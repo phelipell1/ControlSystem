@@ -1,0 +1,70 @@
+<p-panel header="Estoque">
+  <form [formGroup]="formulario">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-formgrid p-col-12 p-sm-2">
+        <label for="dataLancamento">Data Cadastro</label>
+        <input
+          type="date"
+          name="dataLancamento"
+          id="dataLancamento"
+          pInputText
+          formControlName="dataLancamento"
+          required
+        />
+      </div>
+
+      <div class="p-field p-formgrid p-col-12 p-sm-1">
+        <label for="quantidade">Quantidade.</label>
+        <input
+          type="number"
+          name="quantidade"
+          id="data_cadastro"
+          pInputText
+          formControlName="quantidade"
+          placeholder="15"
+          #num_validos
+        />
+      </div>
+
+      <div class="p-field p-formgrid p-col-12 p-sm-4">
+        <label for="">Produto</label>
+        <p-dropdown
+          [options]="produto"
+          optionLabel="descricao"
+          formControlName="produto"
+          placeholder="SELECIONE"
+        ></p-dropdown>
+      </div>
+
+      <div class="p-field p-formgrid p-col-12 p-sm-4">
+        <label for="">Usuário</label>
+        <p-dropdown
+          [options]="usuario"
+          optionLabel="login"
+          formControlName="usuario"
+          placeholder="SELECIONE"
+          required
+        ></p-dropdown>
+      </div>
+
+      <div class="p-field p-formgrid p-col-12 p-sm-2">
+        <button
+          type="submit"
+          pButton
+          label="Gravar"
+          class="ui-button ui-button-success"
+          [disabled]="!formulario.valid"
+          (click)="onSave()"
+        ></button>
+      </div>
+        <div class="p-field p-formgrid p-col-12 p-sm-2">
+          <button
+            pButton
+            label="Cancelar"
+            (click)="cancelar()"
+            class="ui-button ui-button-danger"
+          ></button>
+        </div>
+      </div>
+  </form>
+</p-panel>

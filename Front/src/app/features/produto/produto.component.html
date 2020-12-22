@@ -1,0 +1,84 @@
+<p-panel header="Cadastro Produto">
+    <div class="p-grid">
+        <div class="p-field p-col-12 p-md-4">
+            <label for="text">Descrição </label>
+            <input
+                id="descricao"
+                type="text"
+                pInputText
+                [(ngModel)]="produto.descricao"
+                name="descricao"
+                [ngModelOptions]="{ standalone: true }"
+                placeholder="Descrição do produto"
+                required
+            />
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label>Modelo</label>
+            <p-dropdown
+                [options]="modelos"
+                [(ngModel)]="produto.modelo"
+                optionLabel="descricao"
+                placeholder="SELECIONE"
+                required
+            ></p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label>Tamanhos</label>
+            <p-dropdown
+                [options]="tamanhos"
+                [(ngModel)]="produto.tamanho"
+                optionLabel="nome"
+                placeholder="SELECIONE"
+                required
+            ></p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label for="text">Medida </label>
+            <input
+                id="medida"
+                type="number"
+                placeholder="Media em CM"
+                pInputText
+                [(ngModel)]="produto.medida"
+                name="medida"
+                [ngModelOptions]="{ standalone: true }"
+                required
+            />
+        </div>
+        <div class="p-field p-col-12 p-md-1">
+            <label>R$ Custo</label>
+            <p-inputNumber
+                [(ngModel)]="produto.precoCusto"
+                mode="currency"
+                currency="BRL"
+                locale="pt-BT"
+                name="precoCusto"
+                id="precoCusto"
+                placeholder="99.00"
+                required
+            ></p-inputNumber>
+        </div>
+
+        <div class="p-field p-col-12 p-md-1">
+            <label>R$ Venda</label>
+            <p-inputNumber
+                [(ngModel)]="produto.precoVenda"
+                mode="currency"
+                currency="BRL"
+                locale="pt-BT"
+                name="precoVenda"
+                id="precoVenda"
+                placeholder="99.00"
+            ></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <button pButton type="button" label="Adicionar" class="ui-button-raised ui-button-success"
+            icon="fas fa-plus-circle"  (click)="salvar()" ></button>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <button pButton type="button" label="Cancelar" class="ui-button-raised ui-button-danger"
+            icon="fas fa-window-close" (click)="cancelar()"></button>
+        </div>
+    </div>
+</p-panel>

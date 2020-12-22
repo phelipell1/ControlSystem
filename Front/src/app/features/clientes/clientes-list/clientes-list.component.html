@@ -1,0 +1,56 @@
+
+<p-card>
+  <div class="p-field p-col-2">
+    <button pButton label="Cadastro" icon="fas fa-user" iconPos="left" (click)="click()"></button>
+  </div>
+  <p-table [value]="cliente" [scrollable]="true" scrollHeight="510px" [resizableColumns]="true"
+    styleClass="p-datatable-gridlines" class="ui-table-striped">
+    <ng-template pTemplate="colgroup">
+      <colgroup>
+        <col style="width:13%">
+        <col style="width:15%">
+        <col style="width:10%">
+        <col style="width:10%">
+        <col style="width:5%">
+        <col style="width:9%">
+
+      </colgroup>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pResizableColumn>Nome</th>
+        <th pResizableColumn>Logradouro</th>
+        <th pResizableColumn>Setor/Bairo</th>
+        <th pResizableColumn>Cidade</th>
+        <th pResizableColumn>CEP</th>
+        <th pResizableColumn>Ações</th>
+      </tr>
+      <!---->
+    </ng-template>
+    <ng-template pTemplate="body" let-cliente>
+      <tr>
+        <td>{{cliente.usuario.pessoa.nome}}</td>
+        <td>{{cliente.usuario.pessoa.endereco.logradouro}}</td>
+        <td>{{cliente.usuario.pessoa.endereco.bairro}}</td>
+        <td>{{cliente.usuario.pessoa.endereco.cidade.nomeCidade}}</td>
+        <td>{{cliente.usuario.pessoa.endereco.cep}}</td>
+        <td>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-3">
+              <button pButton pRipple type="button" icon="pi pi-user" class="ui-button-raised ui-button-secondary"
+                (click)="showDetalhes(cliente.idCliente)"></button>
+            </div>
+            <div class="p-field p-col-3">
+              <button pButton pRipple type="button" icon="pi pi-user-edit" class="ui-button-raised"
+                (click)="onEditar(cliente.idCliente)"></button>
+            </div>
+            <div class="p-field p-col-3">
+              <button pButton pRipple type="button" icon="pi pi-times" class="ui-button-raised ui-button-danger"
+                (click)="deleteCliente(cliente.idCliente)"></button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

@@ -1,0 +1,146 @@
+<div class="stepsdemo-content">
+  <p-panel header="Atualizar Clientes/Usuário">
+    <form>
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-4 p-sm-4">
+            <label for="nome">Nome Completo.:</label>
+            <input type="text" name="nome" id="nome" pInputText
+            value="{{clientes.usuario.pessoa.nome}}"/>
+          </div>
+
+          <div class="p-field p-col-2 p-sm-2">
+            <label for="cpf">CPF.:</label>
+            <p-inputMask
+              name="cpf"
+              id="cpf"
+              mask="999.999.999-99"
+              ngModel="{{clientes.usuario.pessoa.cpf}}"></p-inputMask>
+          </div>
+
+          <div class="p-field p-col-2 p-sm-2">
+            <label for="dataNascimento">Data Nascimento.:</label>
+            <input
+              type="date"
+              name="dataNascimento"
+              id="dataNascimento"
+              pInputText
+              value="{{clientes.usuario.pessoa.dataNascimento}}"
+            />
+          </div>
+
+          <div class="p-field p-col-2 p-sm-2">
+            <label for="estadoCivil">Est Civil.:</label>
+            <p-dropdown
+              [options]="estadoCivil"
+              optionLabel="label"
+              name="estadoCivil"
+              id="estadoCivil"
+              placeholder="Selecione"
+              ngModel="{{clientes.usuario.pessoa.estadoCivil}} "
+            ></p-dropdown>
+          </div>
+
+          <div class="p-field p-col-1 p-sm-1">
+            <label for="sexo">Sexo.:</label>
+            <p-dropdown
+              [options]="sexo"
+              optionLabel="label"
+              name="sexo"
+              id="sexo"
+              placeholder="Selecione"
+            >
+            </p-dropdown>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Endereço</legend>
+
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-6 p-sm-6">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" name="logradouro" id="logradouro" pInputText
+            value="{{clientes.usuario.pessoa.endereco.logradouro}}" />
+          </div>
+
+          <div class="p-field p-col-6 p-sm-6">
+            <label for="complemento">Complemento</label>
+            <input type="text" name="complemento" id="complemento" pInputText
+            value="{{clientes.usuario.pessoa.endereco.complemento}}"/>
+          </div>
+
+          <div class="p-field p-col-4 p-sm-4">
+            <label for="bairro">Bairro</label>
+            <input type="text" name="bairro" id="bairro" pInputText
+            value="{{clientes.usuario.pessoa.endereco.bairro}}"/>
+          </div>
+
+          <div class="p-field p-col-4 p-sm-2">
+            <label for="cep">CEP.:</label>
+            <input type="text" name="cep" id="cep" pInputText
+            value="{{clientes.usuario.pessoa.endereco.cep}}"/>
+          </div>
+
+          <div class="p-field p-col-2 p-sm-4">
+            <label for="cidade">Cidade.:</label>
+            <p-dropdown
+              [options]="cidades"
+              optionLabel="nomeCidade"
+              name="cidade"
+              id="cidade"
+              placeholder="Selecione"
+              ngModel="{{clientes.usuario.pessoa.endereco.cidade.nomeCidade}}"
+            ></p-dropdown>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dados Acesso:</legend>
+
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-6 p-sm-3">
+            <label for="login">Login</label>
+            <input type="text" name="login" id="login" pInputText
+            value="{{clientes.usuario.login}}"/>
+          </div>
+
+          <div class="p-field p-col-6 p-sm-2">
+            <label for="senha">Senha</label>
+            <input type="password" name="semha" id="senha" pInputText
+            value="{{clientes.usuario.senha}}"/>
+          </div>
+
+          <div class="p-field p-col-6 p-sm-2">
+            <label for="senha">Data Cadastro</label>
+            <input type="text" name="dataCadastro" id="dataCadastro" pInputText
+            value="{{clientes.usuario.dataCadastro | date: 'dd-MM-yyyy'}}" readonly/>
+          </div>
+
+        </div>
+      </fieldset>
+      <br />
+      <div class="p-fluid p-formgrid p-grid center">
+        <div class="p-field p-col-6 p-sm-2">
+          <button
+            pButton
+            class="ui-button-raised ui-button-success"
+            icon="fas fa-user-plus"
+            label="Atualizar"
+          ></button>
+        </div>
+        <div class="p-field p-col-6 p-sm-2">
+          <button
+            pButton
+            class="ui-button-raised ui-button-danger"
+            icon="fas fa-ban"
+            label="Cancelar"
+            (click)="onBack()"
+          ></button>
+        </div>
+      </div>
+    </form>
+  </p-panel>
+</div>
