@@ -1,11 +1,11 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContactUsMailDialogComponent } from './contact-us-mail-dialog.component';
 
 describe('ContactUsMailDialogComponent', () => {
   let component: ContactUsMailDialogComponent;
   let fixture: ComponentFixture<ContactUsMailDialogComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ContactUsMailDialogComponent ]
     })
