@@ -4,6 +4,7 @@ import { AtividadeComponent } from './atividade.component';
 import { AppCommonModule } from 'src/app/app.common.module';
 import { AtividadeRoutingModule } from './atividade.routing.module';
 import { CalendarModule, CardModule, DataViewModule, PanelModule } from 'primeng';
+import { MatCommonModule, MatLineModule } from '@angular/material/core';
 
 
 
@@ -16,7 +17,9 @@ import { CalendarModule, CardModule, DataViewModule, PanelModule } from 'primeng
     CalendarModule,
     PanelModule,
     CardModule,
-    DataViewModule
+    DataViewModule,
+    MatLineModule,
+    MatCommonModule
   ]
 })
 export class AtividadeModule { }

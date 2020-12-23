@@ -29,18 +29,4 @@
         </div>
     </div>
 
-    <p-dataView [value]="atv">
-        <ng-template let-car pTemplate="listItem">
-            <div>
-                {{car.idAtividade}}{{car.descricaoAtividade}}
-            </div>
-        </ng-template>
-        <ng-template let-car pTemplate="gridItem">
-            <div class="p-col-12 p-md-3">
-                {{car.descricaoAtividade}}
-            </div>
-        </ng-template>
-    </p-dataView>
-
-
 </p-panel>
