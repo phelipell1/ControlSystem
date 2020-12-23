@@ -29,6 +29,7 @@
     "angular-user-idle": "^2.2.1",
     "bootstrap": "^4.5.3",
     "chart.js": "^2.9.3",
+    "cors": "^2.8.5",
     "primeflex": "^1.0.0",
     "primeicons": "^2.0.0",
     "primeng": "^9.1.3",

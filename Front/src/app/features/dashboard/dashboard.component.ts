@@ -2,7 +2,6 @@ import { ConfirmationService, MessageService } from "primeng/api";
 import { Component, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { SelectItem } from "primeng";
-import { Produto } from "src/app/core/models/produto";
 
 @Component({
   selector: "app-dashboard",
@@ -10,9 +9,9 @@ import { Produto } from "src/app/core/models/produto";
   styleUrls: ["dashboard.component.css"],
 })
 export class DashboardComponent implements OnInit {
-  produtos: Produto[];
+  //produtos: Produto[];
 
-  produto: Produto;
+ // produto: Produto;
 
   imagem: any;
 
@@ -35,7 +34,7 @@ export class DashboardComponent implements OnInit {
     this.submitted = false;
   }
 
-  findByValue(prod: string): string {
+  /*findByValue(prod: string): string {
     let valor = null;
     for (let i = 0; i < this.produtos.length; i++) {
       if (this.produtos[i].descricao == prod) {
@@ -46,5 +45,5 @@ export class DashboardComponent implements OnInit {
 
     return valor;
     console.log(valor);
-  }
+  }*/
 }

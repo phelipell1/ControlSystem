@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartmentDataService } from 'src/app/features/department/department-data.service';
-import { Department } from 'src/app/core/models/department.model';
 import { RouteStateService } from 'src/app/core/services/route-state.service';
 
 @Component({
@@ -10,15 +9,12 @@ import { RouteStateService } from 'src/app/core/services/route-state.service';
 })
 export class DepartmentDetailComponent implements OnInit {
 
-  department: Department;
 
   constructor(
     private departmentService: DepartmentDataService,
     private routeStateService: RouteStateService) { }
 
   ngOnInit() {
-    var routeState = this.routeStateService.getCurrent();
-    this.department = this.departmentService.getDepartmentById(routeState.data);
   }
 
   back() {

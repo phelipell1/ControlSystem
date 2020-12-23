@@ -1,0 +1,27 @@
+<p-toolbar>
+  <button pButton label="Registro" class="ui-button-success"></button>
+</p-toolbar>
+<br>
+<p-table class="table-header" [value]="userModel">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>#</th>
+          <th>Login</th>
+          <th>Password</th>
+          <th>Status</th>
+          <th>DT. Cadastro</th>
+          <th>Cargo</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user>
+      <tr>
+
+          <td>{{user.idUsuario}}</td>
+          <td>{{user.login}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.status}}</td>
+          <td>{{user.dataCadastro}}</td>
+          <td>{{user.cargo}}</td>
+      </tr>
+  </ng-template>
+</p-table>

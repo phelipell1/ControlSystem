@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,21 +20,21 @@ import com.prs.systemcontrolapi.rest.exception.ResourceNotFoundException;
 import com.prs.systemcontrolapi.rest.model.Usuario;
 import com.prs.systemcontrolapi.rest.repository.UsuarioRepository;
 
+@CrossOrigin(origins = "http://localhost:4200/**", allowedHeaders = "*")
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("user")
 public class UsuarioController {
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
 
-	
-	@GetMapping
+	@GetMapping()
 	public ResponseEntity<Iterable<Usuario>> get() {
 		return ResponseEntity.ok(usuarioRepository.findAll());
 	}
 	
-	@PostMapping
+	@PostMapping()
 	public Usuario addUsuario(@Validated @RequestBody Usuario Usuario) {
 		return usuarioRepository.save(Usuario);
 	}
@@ -74,4 +75,5 @@ public class UsuarioController {
 		response.put("Deletado com sucesso !", Boolean.TRUE);
 		return response;
 	}
+	
 }
