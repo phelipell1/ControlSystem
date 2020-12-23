@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ import com.prs.systemcontrolapi.rest.exception.ResourceNotFoundException;
 import com.prs.systemcontrolapi.rest.model.Atividade;
 import com.prs.systemcontrolapi.rest.repository.AtividadeRepository;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/atividade")
 public class AtividadeController {

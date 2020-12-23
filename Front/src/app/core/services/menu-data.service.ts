@@ -17,15 +17,13 @@ export class MenuDataService {
             {
                 Label: 'Home', Icon: 'fa-home', RouterLink: '/main/dashboard', Childs: null, IsChildVisible: false
             },
+
             {
-                Label: 'Produtos', Icon: 'fas fa-folder-plus', RouterLink: '/main/produto', Childs: null, IsChildVisible: false
-            },
-            {
-                Label: 'Estoque', Icon: 'fas fa-boxes', RouterLink: '/main/estoque', Childs: null, IsChildVisible: false
-            },
-            {
-              Label: 'Clientes', Icon: 'fas fa-users', RouterLink: '/main/clientes', Childs: null, IsChildVisible: false
-          },
+                Label: 'Atividades', Icon: '', RouterLink: '/main/atividades', Childs: null, IsChildVisible: false
+            }
+                
+
+            
             /*{
                 Label: 'Employees', Icon: 'fa-users', RouterLink: '/main/employees', Childs: null, IsChildVisible: false
             },

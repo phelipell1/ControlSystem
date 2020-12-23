@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.prs.systemcontrolapi.rest.exception.ResourceNotFoundException;
 import com.prs.systemcontrolapi.rest.model.ListaProdutosCompra;
-import com.prs.systemcontrolapi.rest.model.ListaProdutosCompra;
 import com.prs.systemcontrolapi.rest.repository.ListaProdutosCompraRepository;
 
 @RestController

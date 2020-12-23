@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.prs.systemcontrolapi.rest.exception.ResourceNotFoundException;
 import com.prs.systemcontrolapi.rest.model.Loja;
 import com.prs.systemcontrolapi.rest.repository.LojaRepository;
-import com.prs.systemcontrolapi.rest.repository.LojaRepository;
 
 @RestController
 @RequestMapping("/loja")

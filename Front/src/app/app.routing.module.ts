@@ -1,5 +1,3 @@
-import { RegistroClienteModule } from './features/registro-cliente/registro-cliente.module';
-import { EstoqueModule } from './features/estoque/estoque.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -12,10 +10,7 @@ const appRoutes: Routes = [
         path: 'login',
         loadChildren: () => import('src/app/features/login/login.module').then(m => m.LoginModule)
     },
-    {
-        path: 'register',
-        loadChildren: () => import('src/app/features/register-user/register-user.module').then(m => m.RegisterUserModule)
-    },
+    
     {
         path: 'main',
         component: LayoutComponent,
@@ -24,41 +19,17 @@ const appRoutes: Routes = [
             loadChildren: () => import('src/app/features/dashboard/dashboard.module').then(m => m.DashboardModule),
             canActivate: [AuthGuard]
         },
-        {
-            path: 'departments',
-            loadChildren: () => import('src/app/features/department/department.module').then(m => m.DepartmentModule),
-            canActivate: [AuthGuard]
-        },
-        {
-            path: 'employees',
-            loadChildren: () => import('src/app/features/employees/employees.module').then(m => m.EmployeesModule),
-            canActivate: [AuthGuard]
-        },
-        {
-            path: 'aboutus',
-            loadChildren: () => import('src/app/features/aboutus/aboutus.module').then(m => m.AboutUsModule),
-            canActivate: [AuthGuard]
-        },
-        {
-            path: 'contactus',
-            loadChildren: () => import('src/app/features/contactus/contactus.module').then(m => m.ContactUsModule),
-            canActivate: [AuthGuard]
-        },
-        {
-            path: 'produto',
-            loadChildren: () => import('src/app/features/produto/produto.module').then(m => m.ProdutoModule),
-            canActivate: [AuthGuard]
-        },
-        {
-            path: 'estoque',
-            loadChildren: () => import('src/app/features/estoque/estoque.module').then(m => m.EstoqueModule),
-            canActivate: [AuthGuard]
-        },
+
         {
           path: 'clientes',
           loadChildren: () => import('src/app/features/registro-cliente/registro-cliente.module').then(m => m.RegistroClienteModule),
           canActivate: [AuthGuard]
-      }
+        },
+        {
+            path: 'atividades',
+            loadChildren: () => import('src/app/features/atividade/atividade.module').then(m => m.AtividadeModule),
+            canActivate: [AuthGuard]
+          } 
     ]
     },
     {
@@ -74,7 +45,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })],
+    imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

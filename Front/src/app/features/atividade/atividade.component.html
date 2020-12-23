@@ -1,0 +1,46 @@
+<p-panel header="Atividades">
+
+    <div class="ui-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-4">
+            <label for="atividade">Atividade</label>
+            <input id="atividade" type="text" pInputText>
+        </div>
+
+        <div class="p-field p-col-12 p-md-2">
+            <label for="dataInicio">Data Inicio</label>
+            <input id="dataInicio" type="date" pInputText>
+        </div>
+
+        <div class="p-field p-col-12 p-md-2">
+            <label for="dataTermino">Data Termino</label>
+            <input id="dataTermino" type="date" pInputText>
+        </div>
+
+        <div class="p-field p-col-12">
+            <label for="descricaoAtividade">Descrição atividade</label>
+            <textarea id="descricaoAtividade" type="text" rows="4" pInputTextarea></textarea>
+        </div>
+
+        <div class="p-field p-col-12 p-sm-2">
+            <button pButton label="Registrar" class="ui-button-success"></button>
+        </div>
+        <div class="p-field p-col-12 p-sm-2">
+            <button pButton label="Cancelar" class="ui-button-danger"></button>
+        </div>
+    </div>
+
+    <p-dataView [value]="atv">
+        <ng-template let-car pTemplate="listItem">
+            <div>
+                {{car.idAtividade}}{{car.descricaoAtividade}}
+            </div>
+        </ng-template>
+        <ng-template let-car pTemplate="gridItem">
+            <div class="p-col-12 p-md-3">
+                {{car.descricaoAtividade}}
+            </div>
+        </ng-template>
+    </p-dataView>
+
+
+</p-panel>

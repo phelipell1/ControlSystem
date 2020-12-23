@@ -13,7 +13,7 @@ export class CidadeService {
   constructor(private http: HttpClient) { }
 
   buscarCidades(): Observable<Cidade> {
-    return this.http.get<Cidade>(`${environment.API}/cidade`);
+    return this.http.get<Cidade>(`${environment.API}/cidades `);
   }
 
   buscarCidadePorId(idCidade: Cidade): Observable<Cidade> {
