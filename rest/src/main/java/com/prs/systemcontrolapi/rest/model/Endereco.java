@@ -1,6 +1,5 @@
 package com.prs.systemcontrolapi.rest.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Endereco {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "idEndereco")
 	private long idEndereco;
 	
@@ -36,7 +35,10 @@ public class Endereco {
 	@Column(name = "setor_bairro", nullable = false, length = 150)
 	private String setor_bairro;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@Column(name = "cep", nullable = true, length = 8)
+	private String cep;
+	
+	@OneToOne
 	@JoinColumn(name = "idCidade", referencedColumnName = "idCidade")
 	private Cidade idCidade;
 	
@@ -76,5 +78,12 @@ public class Endereco {
 	public void setIdCidade(Cidade idCidade) {
 		this.idCidade = idCidade;
 	}
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+	
 	
 }

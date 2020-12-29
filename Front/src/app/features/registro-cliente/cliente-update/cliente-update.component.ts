@@ -1,6 +1,4 @@
 import { ToastService } from 'src/app/core/services/toast.service';
-import { Cliente } from 'src/app/core/models/cliente';
-import { ClienteService } from './../../../core/services/cliente.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -13,24 +11,14 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class ClienteUpdateComponent implements OnInit {
   id: any;
   formulario: FormGroup;
-  cliente: Cliente;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-    private clienteService: ClienteService,
     private toastService: ToastService
   ) {
 
-    this.id = this.route.snapshot.params['id'];
-
-    this.clienteService.buscarClientePorId(this.id).subscribe(data=>{
-      this.cliente = data;
-      this.recuperaFormulario(this.cliente);
-    }
-
-    )
   }
 
   ngOnInit(): void {
@@ -89,13 +77,4 @@ export class ClienteUpdateComponent implements OnInit {
     })
   }
 
-  onUpdate(id) {
-    this.clienteService.updateCliente(this.id).subscribe(data => {
-
-      this.cliente = data
-
-    },
-      erro=>this.toastService.addSingle("error", "Erro", "Ocorreu um erro interno, tento novamente!")
-    )
-  }
 }

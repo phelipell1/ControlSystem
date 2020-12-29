@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AtividadeComponent } from './atividade.component';
 import { AppCommonModule } from 'src/app/app.common.module';
 import { AtividadeRoutingModule } from './atividade.routing.module';
-import { CalendarModule, CardModule, DataViewModule, PanelModule } from 'primeng';
-import { MatCommonModule, MatLineModule } from '@angular/material/core';
+import {MatListModule} from '@angular/material/list';
+import { AtividadeComponent } from './atividade.component';
+import { CardModule } from 'primeng';
 
 
 
@@ -14,12 +14,8 @@ import { MatCommonModule, MatLineModule } from '@angular/material/core';
     CommonModule,
     AppCommonModule,
     AtividadeRoutingModule,
-    CalendarModule,
-    PanelModule,
-    CardModule,
-    DataViewModule,
-    MatLineModule,
-    MatCommonModule
+    MatListModule,
+    CardModule
   ]
 })
 export class AtividadeModule { }
