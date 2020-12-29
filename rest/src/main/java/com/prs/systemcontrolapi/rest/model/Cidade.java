@@ -27,7 +27,7 @@ public class Cidade {
 	@Column(name = "municipio", nullable = true, length = 100)
 	private String municipio;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idEstado", referencedColumnName = "idEstado")
 	private Estado idEstado;
 	

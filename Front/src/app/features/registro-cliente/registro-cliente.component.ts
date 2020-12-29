@@ -1,12 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { ClienteService } from './../../core/services/cliente.service';
-import { Cidade } from "src/app/core/models/cidade";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { CidadeService } from "./../../core/services/cidade.service";
 import { MessageService, SelectItem } from "primeng/api";
 import { Component, OnInit } from "@angular/core";
-import { Cliente } from "src/app/core/models/cliente";
 import { ToastService } from 'src/app/core/services/toast.service';
 
 @Component({
@@ -15,8 +11,6 @@ import { ToastService } from 'src/app/core/services/toast.service';
   styleUrls: ["./registro-cliente.component.css"],
 })
 export class RegistroClienteComponent implements OnInit {
-  cliente: Cliente;
-  cidades: Cidade;
   formCliente: FormGroup;
   estadoCivil: SelectItem[];
   sexo: SelectItem[];
@@ -24,16 +18,10 @@ export class RegistroClienteComponent implements OnInit {
 
   constructor(
     public messageService: MessageService,
-    private cidadeService: CidadeService,
     private fb: FormBuilder,
-    private clienteService: ClienteService,
     private toastService: ToastService,
     private router: Router
   ) {
-    this.cidadeService.buscarCidades().subscribe((data) => {
-      this.cidades = data;
-    });
-
     this.estadoCivil = [
       { label: "SOLTEIRO", value: 0 },
       { label: "CASADO", value: 1 },
@@ -80,16 +68,5 @@ export class RegistroClienteComponent implements OnInit {
   }
 
   onSave() {
-    this.clienteService
-      .gravarCliente(this.formCliente.value)
-      .subscribe((data) => {
-        this.cliente = data;
-        this.toastService.addSingle("success", "", `${data.usuario.pessoa.nome} adicionado com sucesso !`);
-        this.router.navigate(["/main/clientes"]);
-      },
-
-      error => this.toastService.addSingle("error", "Ops!", "Erro interno, consulte o suporte")
-
-      );
   }
 }

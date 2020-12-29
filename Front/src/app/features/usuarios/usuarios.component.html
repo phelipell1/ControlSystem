@@ -1,0 +1,121 @@
+<p-card header="Cadastro Usuários">
+  <div [formGroup]="formUsuario">
+    <p-fieldset legend="Dados Pessoais" [toggleable]="true">
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-6">
+          <label for="nomeCompleto">Nome Completo</label>
+          <input type="text" name="nomeCompleto" id="nomeCompleto" pInputText>
+          <!--<p-message severity="error" text="Nome é obrigatório" *ngIf="!formUsuario.controls['nomeCompleto'].valid
+          &&formUsuario.controls['nomeCompleto'].dirty&&formUsuario.controls['nomeCompleto'].touched"></p-message>-->
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-2 p-md-2">
+          <label for="nomeCompleto">CPF</label>
+          <p-inputMask type="text" name="nomeCompleto" id="nomeCompleto" mask="999.999.999-99"></p-inputMask>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-2">
+          <label for="nomeLogin">Sexo</label>
+          <p-dropdown [options] optionLabel=""></p-dropdown>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-2">
+          <label for="nomeLogin">Estado Civil</label>
+          <p-dropdown [options] optionLabel=""></p-dropdown>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-2 p-md-2">
+          <label for="dataNascimento">Data Nascimento</label>
+          <input type="date" name="dataNascimento" id="dataNascimento" pInputText>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-3 p-md-3">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" pInputText>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-2 p-md-2">
+          <label for="nomeCompleto">N° Celular</label>
+          <p-inputMask type="text" name="nomeCompleto" id="nomeCompleto" mask="(99)99999-9999"></p-inputMask>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-2 p-md-2">
+          <label for="nomeCompleto">Tel.Fixo</label>
+          <p-inputMask type="text" name="nomeCompleto" id="nomeCompleto" mask="(99)9999-9999"></p-inputMask>
+        </div>
+      </div>
+    </p-fieldset>
+    <br>
+    <p-fieldset legend="Endereço" [toggleable]="true">
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-6">
+          <label for="logradouro">Logradouro</label>
+          <input type="logradouro" name="logradouro" id="logradouro" pInputText>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-1 p-md-1">
+          <label for="numero">Número</label>
+          <input type="numero" name="numero" id="numero" pInputText>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-4 p-md-4">
+          <label for="complemento">Complemento</label>
+          <input type="complemento" name="complemento" id="complemento" pInputText>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-2 p-md-2">
+            <label for="cep">CEP</label>
+            <!--<input type="cep" name="cep" id="cep" pInputText formControlName="cep" #cep required>
+            <p-message severity="error" text="CEP é obrigatório" *ngIf="!formUsuario.controls['cep'].valid&&formUsuario.controls['cep'].touched"></p-message>-->
+          </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-4 p-md-4">
+          <label for="setorBairro">Bairro/Setor</label>
+          <input type="setorBairro" name="setorBairro" id="setorBairro" pInputText>
+          <p></p>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-2">
+          <label for="nomeLogin">Cidade</label>
+          <p-dropdown [options] optionLabel=""></p-dropdown>
+        </div>
+      </div>
+    </p-fieldset>
+    <br>
+    <p-fieldset legend="Dados Login" [toggleable]="true">
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-formgrid p-col-12 p-sm-2 p-md-2">
+          <label for="nomeCompleto">Login</label>
+          <input type="text" name="nomeCompleto" id="nomeCompleto" pInputText formControlName="nomeLogin">
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-2">
+          <label for="nomeLogin">Senha</label>
+          <input type="password" name="nomeLogin" id="nomeLogin" pInputText formControlName="password" maxlength="15">
+          <p-message severity="error" [text]="formUsuario.controls['password'].errors['required'] ? 'Senha e obrigatório' : formUsuario.controls['password'].errors['minlength'] ? 'Máximo de 15 caracteres' : ''" 
+          *ngIf="!formUsuario.controls['password'].valid&&formUsuario.controls['password'].touched&&formUsuario.controls['password'].dirty"></p-message>
+        </div>
+
+        <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-2">
+          <label for="nomeLogin">Cargo</label>
+          <p-dropdown [options] optionLabel="" formControlName="cargo"></p-dropdown>
+        </div>
+      </div>
+    </p-fieldset>
+    <br>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-1">
+        <button pButton label="Registrar" class="ui-button-success"
+        [disabled]="!formUsuario.valid"></button>
+      </div>
+      <div class="p-field p-formgrid p-col-12 p-sm-6 p-md-1">
+        <button pButton label="Cancelar" class="ui-button-danger"></button>
+      </div>
+      
+  
+      
+    </div>
+  </div>
+  {{formUsuario.value | json}}
+</p-card>
+
